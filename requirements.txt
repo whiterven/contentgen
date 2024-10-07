@@ -1,0 +1,6 @@
+flask
+crewai
+crewai-tool
+flask-login
+flask-socketio
+flask-sqlalchemy
