@@ -1,6 +1,6 @@
 flask
 crewai
-crewai-tool
+crewai-tools
 flask-login
 flask-socketio
 flask-sqlalchemy
