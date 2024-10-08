@@ -4,3 +4,5 @@ crewai-tools
 flask-login
 flask-socketio
 flask-sqlalchemy
+eventlet
+gunicorn
