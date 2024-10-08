@@ -1,14 +1,5 @@
-{
-  "builds": [
-    {
-      "src": "app.py",
-      "use": "@vercel/python"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "app.py"
-    }
-  ]
-}
+name: contentgen
+build:
+  command: pip install -r requirements.txt && python app.py
+start:
+  command: gunicorn -w 4 app:app
