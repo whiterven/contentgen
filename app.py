@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, jsonify
 import os
 from crewai import Agent, Task, Crew, Process
 from crewai_tools import SerperDevTool
-from tools.search_scrape import AdvancedSerperSearchTool
 from flask_socketio import SocketIO
 from threading import Thread
 import uuid
@@ -15,7 +14,7 @@ gemini_api_key = os.getenv("GEMINI_API_KEY")
 
 def create_crew(topic, content_type, target_audience, tone, sid):
     llm = "gemini/gemini-1.5-pro"
-    search_tool = AdvancedSerperSearchTool()
+    
     search = SerperDevTool(n_results=4)
 
     researcher = Agent(
@@ -33,7 +32,7 @@ def create_crew(topic, content_type, target_audience, tone, sid):
         cache=True,
         llm=llm,
         allow_delegation=False,
-        tools=[search_tool]
+        tools=[search]
     )
 
     writer = Agent(
