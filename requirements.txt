@@ -6,3 +6,4 @@ flask-socketio
 flask-sqlalchemy
 eventlet
 gunicorn
+nltk
